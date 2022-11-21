@@ -7,11 +7,6 @@ type ServiceType =
   | "TwoDayEvent"
   | "WeddingSession";
 
-type serviceConnection = 
-  | "DependantService"
-  | "Discount"
-  | "Package"
-
 interface IService {
     type: ServiceType,
     price: number | PricePerYear[]
@@ -24,7 +19,7 @@ interface ConnectedService {
 
 interface PricePerYear {
   price: number,
-  year?: ServiceYear
+  year: ServiceYear
 }
 
 interface DiscountedPrices {
